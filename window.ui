@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+ <object class="AdwLeaflet" id="leaflet">
+    <!--<property name="can-navigate-back">True</property>-->
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="AdwHeaderBar">
+            <binding name="show-end-title-buttons">
+              <lookup name="folded">leaflet</lookup>
+            </binding>
+	    <child>
+              <object class="GtkButton" id="search_button">
+                <property name="receives-default">1</property>
+                <property name="icon-name">list-add-symbolic</property>
+              </object>
+            </child>
+            <child type="title">
+              <object class="AdwWindowTitle">
+                <property name="title" translatable="yes">Topics</property>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="GtkScrolledWindow">
+            <property name="hscrollbar-policy">never</property>
+            <property name="child">
+              <object class="GtkListBox" id="home_listbox">
+                <property name="width-request">200</property>
+                <property name="vexpand">1</property>
+                <style>
+                  <class name="navigation-sidebar"/>
+                </style>
+                <child>
+                  <object class="GtkListBoxRow">
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">Test 1</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkListBoxRow">
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">Test 2</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkListBoxRow">
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">Test 3</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </child>
+        <!--<child>
+          <object class="GtkListBox">
+            <property name="selection-mode">GTK_SELECTION_BROWSE</property>
+            <style>
+              <class name="navigation-sidebar"/>
+            </style>
+            <child>
+              <object class="GtkListBoxRow">
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Test 1</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkListBoxRow">
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Test 2</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkListBoxRow">
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Test 3</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>-->
+
+      </object>
+    </child>
+    <child>
+      <object class="AdwLeafletPage">
+        <property name="navigatable">False</property>
+        <property name="child">
+          <object class="GtkSeparator"/>
+        </property>
+      </object>
+    </child>
+    <child>
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="hexpand">True</property>>
+        <child>
+          <object class="AdwHeaderBar">
+            <binding name="show-start-title-buttons">
+              <lookup name="folded">leaflet</lookup>
+            </binding>
+            <child>
+              <object class="GtkButton">
+                <binding name="visible">
+                  <lookup name="folded">leaflet</lookup>
+                </binding>
+                <property name="icon-name">go-previous-symbolic</property>
+              </object>
+            </child>
+            <property name="title-widget">
+              <object class="AdwWindowTitle">
+                <property name="title" translatable="yes">Flash Cards</property>
+              </object>
+            </property>
+          </object>
+        </child>
+        <!-- content -->
+      </object>
+    </child>
+  </object>
+</interface>
