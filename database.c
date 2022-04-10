@@ -1,19 +1,7 @@
+#include "database.h"
+
 #include <stdio.h>
 #include <sqlite3.h>
-#include <glib.h>
-
-typedef struct category
-{
-    int id;
-    char *name;
-} category;
-
-typedef struct card
-{
-    int category;
-    char *task;
-    char *solution;
-} card;
 
 sqlite3 *db;
 

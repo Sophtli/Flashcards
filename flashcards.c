@@ -1,6 +1,6 @@
 #include <adwaita.h>
 
-#include "database.c"
+#include "database.h"
 
 static void activate (GtkApplication *app)
 {
@@ -15,7 +15,7 @@ static void activate (GtkApplication *app)
 
     // gtk_window_set_titlebar (GTK_WINDOW(window), header_bar);
 
-    GtkBuilder *list_builder = gtk_builder_new_from_file ("window.ui");
+    GtkBuilder *list_builder = gtk_builder_new_from_resource ("/li/sopht/Flashcards/ui/window.ui");
 
     gtk_window_set_titlebar (GTK_WINDOW (window), GTK_WIDGET (gtk_builder_get_object (list_builder, "leaflet")));
 
