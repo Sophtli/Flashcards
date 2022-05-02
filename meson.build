@@ -10,13 +10,15 @@ common_cflags = cc.get_supported_arguments()
 
 flashcards_resources = gnome.compile_resources('flashcards_resources',
   'flashcards.gresource.xml',
-  source_dir: 'ui'
+  source_dir: '.'
 )
 
 flashcards_schemas = gnome.compile_schemas()
 
 executable('flashcards',
-  'flashcards.c',
+  'main.c',
+  'flashcardsapp.c',
+  'flashcardsappwin.c',
   'database.c',
   flashcards_resources,
   flashcards_schemas,
