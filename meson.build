@@ -1,27 +1,18 @@
-project('flashcards', 'c')
+project('flashcards', 'c', version : '1.0.0', license : 'GPL')
 
-gtkdep = dependency('gtk4')
-libadwaitadep = dependency('libadwaita-1')
-sqlitedep = dependency('sqlite3')
+gtk_dep = dependency('gtk4')
+libadwaita_dep = dependency('libadwaita-1')
+sqlite_dep = dependency('sqlite3')
 
 gnome = import('gnome')
 cc = meson.get_compiler('c')
-common_cflags = cc.get_supported_arguments()
 
-flashcards_resources = gnome.compile_resources('flashcards_resources',
-  'flashcards.gresource.xml',
-  source_dir: '.'
-)
-
-flashcards_schemas = gnome.compile_schemas()
+subdir('src')
+subdir('resources')
 
 executable('flashcards',
-  'main.c',
-  'flashcardsapp.c',
-  'flashcardsappwin.c',
-  'database.c',
-  flashcards_resources,
-  flashcards_schemas,
-  dependencies: [gtkdep, libadwaitadep, sqlitedep],
-  c_args: common_cflags
+  sourcefiles,
+  resources,
+  schemas,
+  dependencies: [gtk_dep, libadwaita_dep, sqlite_dep]
 )
