@@ -73,9 +73,9 @@ void database_save_category()
 {
 }
 
-GArray* database_load_categories()
+GArray *database_load_categories()
 {
-    GArray *categories = g_array_new (TRUE, FALSE, sizeof(category));
+    GArray *categories = g_array_new(TRUE, FALSE, sizeof(category));
 
     int rc;
     sqlite3_stmt *stmt;
@@ -93,10 +93,10 @@ GArray* database_load_categories()
         const unsigned char *temp_name = sqlite3_column_text(stmt, 1);
         fprintf(stdout, "%d: %s\n", id, temp_name);
 
-        char* name = malloc (strlen(temp_name) * sizeof(char));
-        strcpy (name, temp_name);
-        category c = { id, name };
-        g_array_append_val (categories, c);
+        char *name = g_new0(char, strlen(temp_name));
+        strcpy(name, temp_name);
+        category c = {id, name};
+        g_array_append_val(categories, c);
     }
 
     sqlite3_finalize(stmt);
@@ -126,8 +126,9 @@ void database_save_card(card c)
     sqlite3_finalize(stmt);
 }
 
-card* database_load_cards()
+GArray *database_load_cards()
 {
-    card *cards = g_new0(card, 1);
+    GArray *cards = g_array_new(TRUE, FALSE, sizeof(card));
+
     return cards;
 }

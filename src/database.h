@@ -21,8 +21,8 @@ void database_create_tables();
 
 void database_save_category();
 
-GArray* database_load_categories();
+GArray *database_load_categories();
 
 void database_save_card(card c);
 
-card* database_load_cards();
+GArray *database_load_cards();

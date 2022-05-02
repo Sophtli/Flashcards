@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
     <template class="FlashcardsAppWindow" parent="AdwApplicationWindow">
-        <!--
-            <property name="width-request">800</property>
-            <property name="height-request">500</property>
-        -->
-        <property name="title" translatable="yes">Flashcards</property>
+        <property name="title" translatable="yes">_Flashcards</property>
 
         <child>
             <object class="AdwLeaflet" id="leaflet">
@@ -22,7 +18,7 @@
                                 </binding>
                                 <property name="title-widget">
                                     <object class="AdwWindowTitle">
-                                        <property name="title">Topics</property>
+                                        <property name="title" translatable="yes">_Topics</property>
                                     </object>
                                 </property>
                             </object>
@@ -88,7 +84,7 @@
                                 </child>
                                 <property name="title-widget">
                                     <object class="AdwWindowTitle">
-                                        <property name="title">Flashcards</property>
+                                        <property name="title" translatable="yes">_Flashcards</property>
                                     </object>
                                 </property>
                             </object>

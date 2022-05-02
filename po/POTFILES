@@ -1,0 +1,4 @@
+resources/window.ui
+src/flashcardsapp.c
+src/flashcardsappwin.c
+src/database.c

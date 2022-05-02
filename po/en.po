@@ -1,0 +1,7 @@
+#: resources/window.ui:4 resources/window.ui:87
+msgid "_Flashcards"
+msgstr "Flashcards"
+
+#: resources/window.ui:21
+msgid "_Topics"
+msgstr "Topics"
