@@ -5,7 +5,6 @@ libadwaita_dep = dependency('libadwaita-1')
 sqlite_dep = dependency('sqlite3')
 
 gnome = import('gnome')
-cc = meson.get_compiler('c')
 
 subdir('src')
 subdir('resources')
