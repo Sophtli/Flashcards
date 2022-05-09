@@ -91,7 +91,6 @@ GArray *database_load_categories()
     {
         int id = sqlite3_column_int(stmt, 0);
         const unsigned char *temp_name = sqlite3_column_text(stmt, 1);
-        fprintf(stdout, "%d: %s\n", id, temp_name);
 
         char *name = g_new0(char, strlen(temp_name));
         strcpy(name, temp_name);

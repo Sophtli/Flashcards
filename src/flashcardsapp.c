@@ -4,9 +4,13 @@
 #include "flashcardsapp.h"
 #include "flashcardsappwin.h"
 
+#include "database.h"
+
 struct _FlashcardsApp
 {
   AdwApplication parent;
+
+  GArray* categories;
 };
 
 G_DEFINE_TYPE(FlashcardsApp, flashcards_app, ADW_TYPE_APPLICATION);
