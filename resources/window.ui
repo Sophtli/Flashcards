@@ -37,6 +37,8 @@
                                         <property name="margin-start">12</property>
                                         <property name="margin-end">12</property>
 
+                                        <signal name="row-selected" handler="on_category_selected" swapped="no"/>
+
                                         <style>
                                             <class name="boxed-list" />
                                         </style>
@@ -65,11 +67,12 @@
                                     <lookup name="folded">leaflet</lookup>
                                 </binding>
                                 <child>
-                                    <object class="GtkButton">
+                                    <object class="GtkButton" id="leaflet_previous">
                                         <binding name="visible">
                                             <lookup name="folded">leaflet</lookup>
                                         </binding>
                                         <property name="icon-name">go-previous-symbolic</property>
+                                        <signal name="clicked" handler="on_navigate_back" swapped="no"/>
                                     </object>
                                 </child>
                                 <property name="title-widget">
