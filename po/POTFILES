@@ -1,4 +1,4 @@
-resources/window.ui
+resources/window.blp
 src/flashcardsapp.c
 src/flashcardsappwin.c
 src/database.c

@@ -1,0 +1,102 @@
+using Gtk 4.0;
+using Adw 1;
+
+template FlashcardsAppWindow : Adw.ApplicationWindow {
+  title: _("Flashcards");
+
+  Adw.Leaflet leaflet {
+    can-navigate-back: true;
+
+    Box {
+      orientation: vertical;
+      hexpand: true;
+      width-request: 360;
+
+      Adw.HeaderBar {
+        show-end-title-buttons: bind leaflet.folded;
+
+        [title]
+        Adw.WindowTitle {
+          title: _("Topics");
+        }
+      }
+
+      Adw.Clamp {
+        hexpand: true;
+        child: ListBox topics {
+          hexpand: true;
+          selection-mode: single;
+          margin-top: 12;
+          margin-bottom: 12;
+          margin-start: 12;
+          margin-end: 12;
+          row-selected => on_category_selected();
+
+          styles [
+            "boxed-list",
+          ]
+        };
+      }
+    }
+
+    Adw.LeafletPage {
+      navigatable: false;
+      child: Separator {};
+    }
+
+    Box {
+      orientation: vertical;
+      hexpand: true;
+
+      Adw.HeaderBar {
+        show-start-title-buttons: bind leaflet.folded;
+        Button leaflet_previous {
+          visible: bind leaflet.folded;
+          icon-name: "go-previous-symbolic";
+          clicked => on_navigate_back();
+        }
+
+        [end]
+			  Gtk.MenuButton {
+			    icon-name: "open-menu-symbolic";
+			    menu-model: primary_menu;
+			  }
+      }
+
+      Adw.Clamp {
+        hexpand: true;
+        child: Adw.Bin {
+          margin-top: 12;
+          margin-bottom: 12;
+          margin-start: 12;
+          margin-end: 12;
+
+          styles [
+            "card",
+          ]
+          child: Label {
+            margin-top: 24;
+            margin-bottom: 24;
+            margin-start: 24;
+            margin-end: 24;
+            wrap: true;
+            label: "Wie viel Grad hat ein Kreis?";
+          };
+        };
+      }
+    }
+  }
+}
+
+menu primary_menu {
+  section {
+    item {
+    	label: _("Upgrade Assistant");
+      action: "win.show-upgrade-assistant";
+    }
+    item {
+    	label: _("About Flashcards");
+      action: "app.about";
+    }
+  }
+}

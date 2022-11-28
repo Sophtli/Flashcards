@@ -1,6 +1,8 @@
 #include <gtk/gtk.h>
 #include <adwaita.h>
 
+#include <glib/gi18n.h>
+
 #include "flashcardsapp.h"
 #include "flashcardsappwin.h"
 
@@ -20,6 +22,18 @@ struct _FlashcardsAppWindow
 G_DEFINE_TYPE(FlashcardsAppWindow, flashcards_app_window, ADW_TYPE_APPLICATION_WINDOW);
 
 static void
+show_about (GtkWindow *win)
+{
+  adw_show_about_window (win,
+                         "application-name", _("Flashcards"),
+                         "application-icon", "org.gnome.Builder",
+                         "developer-name", "Sophie Krause",
+                         "version", "1.0",
+                         "license-type", GTK_LICENSE_MIT_X11,
+                         NULL);
+}
+
+static void
 on_category_selected(GtkListBox *box, GtkListBoxRow *row, gpointer user_data)
 {
     if (row == NULL)
@@ -32,6 +46,8 @@ on_category_selected(GtkListBox *box, GtkListBoxRow *row, gpointer user_data)
 
     int id = gtk_list_box_row_get_index(gtk_list_box_get_selected_row(win->topics));
     printf("%d\n", id);
+
+    show_about (GTK_WINDOW(gtk_widget_get_root (GTK_WIDGET (box))));
 }
 
 static void

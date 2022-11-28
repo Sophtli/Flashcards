@@ -1,7 +1,7 @@
-project('flashcards', 'c', version : '1.0.0', license : 'GPL-3.0-or-later')
+project('flashcards', 'c', version : '1.0', license : 'GPL-3.0-or-later')
 
 gtk_dep = dependency('gtk4')
-libadwaita_dep = dependency('libadwaita-1')
+libadwaita_dep = dependency('libadwaita-1', version: '>=1.2')
 sqlite_dep = dependency('sqlite3')
 
 gnome = import('gnome')

@@ -1,7 +1,15 @@
-#: resources/window.ui:4 resources/window.ui:87
-msgid "_Flashcards"
+#: resources/window.blp:5 src/flashcardsappwin.c:28
+msgid "Flashcards"
 msgstr "Karteikarten"
 
-#: resources/window.ui:21
-msgid "_Topics"
+#: resources/window.blp:20
+msgid "Topics"
 msgstr "Themen"
+
+#: resources/window.blp:94
+msgid "Upgrade Assistant"
+msgstr ""
+
+#: resources/window.blp:98
+msgid "About Flashcards"
+msgstr "Über Karteikarten"

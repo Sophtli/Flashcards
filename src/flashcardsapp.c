@@ -22,11 +22,6 @@ static void
 flashcards_app_activate(GApplication *app)
 {
   FlashcardsAppWindow *win;
-
-  database_connect(g_get_user_data_dir());
-  database_create_tables();
-  GArray *categories = database_load_categories();
-
   win = flashcards_app_window_new(FLASHCARDS_APP(app));
   gtk_window_present(GTK_WINDOW(win));
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: flashcards\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-02 21:10+0200\n"
+"POT-Creation-Date: 2022-11-28 22:18+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: resources/window.ui:4 resources/window.ui:87
-msgid "_Flashcards"
+#: resources/window.blp:5 src/flashcardsappwin.c:28
+msgid "Flashcards"
 msgstr ""
 
-#: resources/window.ui:21
-msgid "_Topics"
+#: resources/window.blp:20
+msgid "Topics"
+msgstr ""
+
+#: resources/window.blp:94
+msgid "Upgrade Assistant"
+msgstr ""
+
+#: resources/window.blp:98
+msgid "About Flashcards"
 msgstr ""
